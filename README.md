@@ -2,7 +2,7 @@
 
 # Project Overview
 
-This project demonstrates the implementation of an F´ application for an ESP32-based Arduino system. The project includes a touch sensor component that interacts with GPIO pins to detect touch events and trigger visual events. The project uses the fprime-arduino library to interface with the hardware and the fprime-gds (Ground Data System) for monitoring and control.
+This project demonstrates the implementation of an F' application for an ESP32-based Arduino system. The project includes a touch sensor component that interacts with GPIO pins to detect touch events and trigger visual events. The project uses the fprime-arduino library to interface with the hardware and the fprime-gds (Ground Data System) for monitoring and control.
 
 # Requirements:
 In order to clone the project, a fprime-venv needs to be created before cloning the repo. A WSL2 Ubuntu virtual machine has been used for this project but any similar configuration would work.
@@ -42,7 +42,7 @@ Follow the [Arduino CLI Installation Guide](https://github.com/fprime-community/
     arduino-cli core install esp32:esp32@2.0.9
     ```
 
-4. **Install esptool**
+5. **Install esptool**
     ```bash
     pip install esptool
     ```
@@ -50,7 +50,6 @@ Follow the [Arduino CLI Installation Guide](https://github.com/fprime-community/
 
 ## Build
 Once the mandatory requirments successfully installed :
-
     ```
     #In project root
     fprime-util generate
