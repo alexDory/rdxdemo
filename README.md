@@ -75,3 +75,12 @@ fprime-gds -n --dictionary ./build-artifacts/esp32/rdxdemo/dict/rdxdemoTopologyA
 
 The path to dictionnary and the UART port must be adjusted to correspond to the machine the project is installed to.
 
+# Worked hours breakdown
+
++ Installing fprime and setting up environment : ~ 4h
++ Experimenting with basic fprime example deployments : ~ 2h
++ Setting up nodes fprime-arduino, installing core esp32 libraries and testing builds : ~ 6h
++ Developing and implementing fprime components : ~ 3h
++ Fixing and exploring issues with esp32 - fprime-gds deployment : ~ 6h
++ Understanding how to work with fprime, following tutorials, .fpp files etc... : ~ 20h
++ **Total : 41h**
