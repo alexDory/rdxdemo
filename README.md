@@ -5,7 +5,7 @@
 This project demonstrates the implementation of an F´ application for an ESP32-based Arduino system. The project includes a touch sensor component that interacts with GPIO pins to detect touch events and trigger visual events. The project uses the fprime-arduino library to interface with the hardware and the fprime-gds (Ground Data System) for monitoring and control.
 
 # Requirements:
-It is supposed that fprime is already installed on the system. A WSL2 Ubuntu virtual machine has been used for this project but any similar configuration would work.
+In order to clone the project, a fprime-venv needs to be created before cloning the repo. A WSL2 Ubuntu virtual machine has been used for this project but any similar configuration would work.
 
 ## Virtual environment
 
@@ -16,29 +16,39 @@ It is supposed that fprime is already installed on the system. A WSL2 Ubuntu vir
     source fprime-venv/bin/activate
     ```
 
-1. **Install fprime-tools:**
+1. **Install and clone with fprime-bootstrap**
+    ```bash
+    pip install fprime-bootstrap
+    fprime-bootstrap clone https://github.com/alexDory/rdxdemo.git
+    ```
+
+The actual venv can now be deleted since fprime-bootstrap installed a new updated one in the project folder. This new venv is to be utilized for next steps.
+
+1. **Install setuptools**
+    ```bash
+    pip install setuptools
+    ```
+2. **Install fprime-tools:**
     ```bash
     pip install fprime-tools
     ```
 
-2. **Install fprime-arduino:**
-    ```bash
-    pip install fprime-arduino
-    ```
-
-3. **Install fprime-baremetal:**
-    ```bash
-    pip install fprime-baremetal
-    ```
-
-4. **Install arduino-cli & ESP32 Board:**
+3. **Install arduino-cli & arduino-cli-wrapper:**
 Follow the [Arduino CLI Installation Guide](https://github.com/fprime-community/fprime-arduino/blob/main/docs/arduino-cli-install.md).
 
-*Note as said in the installation guide from the fprime community, version older than ESP32@2.0.9 won't work so be sure to downgrade your installed version if necessary.*
+ 
+4. **Install esp32 arduino core**
+    ```bash
+    arduino-cli core install esp32:esp32@2.0.9
+    ```
 
-## Build and run on hardware
+4. **Install esptool**
+    ```bash
+    pip install esptool
+    ```
+# Build and run on hardware
 
-### Build
+## Build
 Once the mandatory requirments successfully installed :
 
     ```
@@ -46,9 +56,9 @@ Once the mandatory requirments successfully installed :
     fprime-util generate
     fprime-util build   
     ```
-This will generate and build the project using the [settings.ini](settings.ini) file. To build this project on other boards compatible with fprime-arduino-cli, change the `default_toolchain: esp32` line.
+This will generate and build the project using the [settings.ini](settings.ini) file. To build this project on other boards compatible with fprime-arduino-cli, change the `default_toolchain: esp32` line and install the desired board with neccessary tools associated.
 
-### Run
+## Run
 In order to run, the project uses serial communication through UART. It is neccessary to connect the USB device to the WSL machine in order to run the project inside the same environment. First in a PowerShell CLI in admin, install usbipd, then :
 
 ```
