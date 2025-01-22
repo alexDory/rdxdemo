@@ -42,6 +42,8 @@ Follow the [Arduino CLI Installation Guide](https://github.com/fprime-community/
     arduino-cli core install esp32:esp32@2.0.9
     ```
 
+*Note the busid parameter might differ depending on the port connected, be sure to identify wich one to use*
+
 5. **Install esptool**
     ```bash
     pip install esptool
@@ -65,10 +67,7 @@ usbipd bind --busid 1-3
 usbipd attach --wsl --busid 1-3
 ```
 
-*Note the busid parameter might differ depending on the port connected, be sure to identify wich one to use*
-
 After successfully connecting the board to WSL, the board should be flashed using the fprime generated bootloader for arduino compatible board.
-
 
 ```
 python3 ~/.arduino15/packages/esp32/tools/esptool_py/4.5.1/esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 115200  --before default_reset --after hard_reset write_flash -e -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 build-fprime-automatic-esp32/arduino-cli-sketch/tmpXXXXXXXX.ino.bootloader.bin 0x8000 build-fprime-automatic-esp32/arduino-cli-sketch/tmpXXXXXXXX.ino.partitions.bin 0xe000 ~/.arduino15/packages/esp32/hardware/esp32/2.0.9/tools/partitions/boot_app0.bin 0x10000 build-artifacts/esp32/rdxdemo/bin/rdxdemo.elf.bin
