@@ -10,11 +10,11 @@ In order to clone the project, a fprime-venv needs to be created before cloning 
 ## Virtual environment
 
 **Create the venv**
-    ```
-    #In project root
-    python3 -m venv fprime-venv
-    source fprime-venv/bin/activate
-    ```
+```
+#In project root
+python3 -m venv fprime-venv
+source fprime-venv/bin/activate
+```
 
 1. **Install and clone with fprime-bootstrap**
     ```bash
@@ -28,6 +28,7 @@ The actual venv can now be deleted since fprime-bootstrap installed a new update
     ```bash
     pip install setuptools
     ```
+
 2. **Install fprime-tools:**
     ```bash
     pip install fprime-tools
@@ -52,11 +53,12 @@ Follow the [Arduino CLI Installation Guide](https://github.com/fprime-community/
 
 ## Build
 Once the mandatory requirments successfully installed :
-    ```
-    #In project root
-    fprime-util generate
-    fprime-util build   
-    ```
+```
+#In project root
+fprime-util generate
+fprime-util build   
+```
+
 This will generate and build the project using the [settings.ini](settings.ini) file. To build this project on other boards compatible with fprime-arduino-cli, change the `default_toolchain: esp32` line and install the desired board with neccessary tools associated.
 
 ## Run
