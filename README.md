@@ -10,7 +10,7 @@ In order to clone the project, a fprime-venv needs to be created before cloning 
 ## Virtual environment
 
 **Create the venv**
-    ```bash
+    ```
     #In project root
     python3 -m venv fprime-venv
     source fprime-venv/bin/activate
